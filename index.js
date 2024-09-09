@@ -13,7 +13,9 @@ app.get('/cadastro',(req,res)=>{
 
 app.post('/cadastro', async(req,res)=>{
  
+      //esse comando equivale a um if
       const admin=req.body.admin=="on"?true:false;
+
       const novoUsuario = new usuario({ //metodo medio
             nome: req.body.nome,
             email: req.body.email,
@@ -39,6 +41,25 @@ app.post('/cadastro', async(req,res)=>{
       const admin = req.body.admin;
 
   const novoUsuario= new usuario(req.body) metodo curto
+
+
+  let x;
+  if(req.body.admin=="on"){
+      x=true;
+  }else{
+    x=false;
+  
+}
 */ 
+
+app.get('/login',(req,res)=>{
+      res.render('login')
+
+});
+
+app.post('/login',(req,res)=>{
+      res.redirect('/admin/usuarios/lst')
+      
+});
 
 app.listen(port);

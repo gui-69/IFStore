@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IFStore - Login</title>
+    <style>
+        body{
+            background-color: cornflowerblue;
+            border: solid 1px black;
+            width: 800px;
+            margin:auto;
+        }
+        
+        div{
+            margin: 5px;
+        }
+        input[type="checkbox"]{
+            padding: 10px;
+            width: auto;
+        }
+        input{
+            padding: 10px;
+            width: 755px;
+        }
+        h1{
+          text-align: center;
+        }
+        button{
+            background-color: greenyellow;
+            color:aliceblue;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            margin-top: 15px;
+            width: 100%;
+            margin-bottom: 15px;
+            font-weight: bold;
+            font-size: 16px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Login</h1>
+    <form method="post">
+        <div>   
+            <label for="email">Email:</label>
+            <input type="email" id="Email" name="Email">
+        </div>
+       <div>   
+            <input type="password" name="senha" id="senha">
+            <label for="senha">Senha:</label>
+        </div>
+        <div>   
+            <button type="submit">Logar</button>
+            
+        </div>  
+        <div> 
+            <p>você não tem cadastrado?/<a href="/cadastro">LOGIN</a>
+            </p>
+        </div>
+    </form>
+</body>
+</html>
