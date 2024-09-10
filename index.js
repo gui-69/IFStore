@@ -62,7 +62,7 @@ app.post('/login',(req,res)=>{
       
 });
 app.get("/admin/usuarios/lst",(req,res)=>{
-      res.render('admon/usuarios/lst')
+      res.render('admin/usuarios/lst')
 });
 
 app.listen(port);
