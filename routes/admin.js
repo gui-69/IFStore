@@ -1,8 +1,9 @@
 import express from 'express';
+
 const router = express.Router();
 
-app.get("/admin/usuarios/lst", (req, res) => {
-    res.render('admin/usuarios/lst');
-});
+import {listarusuarios} from '../controllers/admin.js';
 
-export default router
+router.get("/admin/usuarios/lst", listarusuarios);
+
+export default router   

@@ -1,5 +1,5 @@
 import usuario from '../models/usuario.js';
-
+    
 export async function abreCadastro(req,res){
     res.render('cadastro')
 }
