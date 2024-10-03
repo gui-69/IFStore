@@ -2,7 +2,7 @@ import express from 'express';
 
 const router = express.Router();
 
-import {listarusuarios, detalhe,abreaddcategoria,addcategoria, listarcategoria,filtrarcategoria} from '../controllers/admin.js';
+import {listarusuarios, detalhe,abreaddcategoria,addcategoria, listarcategoria,filtrarcategoria, deletecategoria,editarcategoria} from '../controllers/admin.js';
 
 router.get("/admin/usuarios/lst", listarusuarios);
 
@@ -16,5 +16,10 @@ router.post("/admin/categoria/add",addcategoria);
 router.get("/admin/categoria/lst",listarcategoria);
 router.post("/admin/categoria/lst",filtrarcategoria); 
 
+//deletar
+router.get('/admin/categoria/del/:id',deletecategoria);
+
+//ditar
+router.get('/admin/categoria/edt/:id',editarcategoria);
 
 export default router   

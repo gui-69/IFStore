@@ -30,6 +30,16 @@ export async function listarcategoria(req, res){
 }
 
 export async function filtrarcategoria(req, res){
-    const categorias = await Categoria.find({nome:req.body.pesquisar});
+    const categorias = await Categoria.find({nome: new RegExp(req.body.pesquisar,"i")});
     res.render('admin/categoria/lst',{Categorias: categorias});
+}
+
+export async function deletecategoria(req, res){
+     await Categoria.findByIdAndDelete(req.params.id)
+    res.redirect('/admin/categoria/lst')
+}
+
+export async function editarcategoria(req, res){
+    await Categoria.findByIdAndEdit(req.params.id)
+   res.redirect('/admin/categoria/lst')
 }
