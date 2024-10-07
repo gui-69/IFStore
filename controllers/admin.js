@@ -1,6 +1,6 @@
 import Categoria from "../models/categoria.js";
 import Usuario from "../models/usuario.js";
-
+import Produto from "../models/produto.js";
 
 export async function listarusuarios(req, res) {
     const usuarios = await Usuario.find({});
@@ -39,7 +39,53 @@ export async function deletecategoria(req, res){
     res.redirect('/admin/categoria/lst')
 }
 
-export async function editarcategoria(req, res){
-    await Categoria.findByIdAndEdit(req.params.id)
+
+export async function abreedtcategoria(req, res){
+    const categoria= await Categoria.findById(req.params.id)
+   res.render('admin/categoria/edt.ejs',{Categoria: categoria});
+}
+export async function edtcategoria(req, res){
+    await Categoria.findByIdAndUpdate(req.params.id,req.body)
+   res.redirect('/admin/categoria/lst')
+}
+
+//----------------------------------------------------------------
+//produto
+
+
+export async function abreaddproduto(req, res){
+    res.render('admin/produto/add')
+}
+
+
+export async function addproduto(req, res){
+    await Produto.create({
+        nome:req.body.nome
+    })
+  res.redirect('/admin/produto/add');
+
+}
+export async function listarproduto(req, res){
+    const produtos = await Produto.find({});
+    res.render('admin/produto/lst',{Produtos: produtos});
+}
+
+export async function filtrarproduto(req, res){
+    const produtos = await Produto.find({nome: new RegExp(req.body.pesquisar,"i")});
+    res.render('admin/categoria/lst',{Produtoa: produtos});
+}
+
+export async function deletecategoria(req, res){
+     await Categoria.findByIdAndDelete(req.params.id)
+    res.redirect('/admin/categoria/lst')
+}
+
+
+export async function abreedtcategoria(req, res){
+    const categoria= await Categoria.findById(req.params.id)
+   res.render('admin/categoria/edt.ejs',{Categoria: categoria});
+}
+export async function edtcategoria(req, res){
+    await Categoria.findByIdAndUpdate(req.params.id,req.body)
    res.redirect('/admin/categoria/lst')
 }

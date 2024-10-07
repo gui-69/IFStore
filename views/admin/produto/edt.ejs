@@ -1,0 +1,42 @@
+<%-include('../cabecalho.ejs')%>
+    <section class="col-12 col-md-10">
+
+        <div class="card my-4">
+
+            <div class="card-header">Lista Categoria </div>
+
+            <div class="card-body">
+
+                <form method="post">
+
+                    <div class="mb-3">
+
+                        <label for="id" class="forme-label">ID</label>
+                        <input type="text" name="id" readonly id="nome" class="form-control"
+                            value="<%=Categoria._id%>">
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label for="nome" class="forme-label">Nome</label>
+                        <input type="text" name="nome" required id="nome" class="form-control"
+                            value="<%=Categoria.nome%>">
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <input type="submit" value="dicionar" class="form-control">
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <%-include('../rodape.ejs')%>
