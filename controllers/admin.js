@@ -60,7 +60,9 @@ export async function abreaddproduto(req, res){
 
 export async function addproduto(req, res){
     await Produto.create({
-        nome:req.body.nome
+        nome:req.body.nome,
+        valor:parseFloat(req.body.valor),
+        foto:req.body.foto,
     })
   res.redirect('/admin/produto/add');
 
@@ -72,20 +74,20 @@ export async function listarproduto(req, res){
 
 export async function filtrarproduto(req, res){
     const produtos = await Produto.find({nome: new RegExp(req.body.pesquisar,"i")});
-    res.render('admin/categoria/lst',{Produtoa: produtos});
+    res.render('admin/produto/lst',{Produtos: produtos});
 }
 
-export async function deletecategoria(req, res){
-     await Categoria.findByIdAndDelete(req.params.id)
-    res.redirect('/admin/categoria/lst')
+export async function deleteproduto(req, res){
+     await Produto.findByIdAndDelete(req.params.id)
+    res.redirect('/admin/produto/lst')
 }
 
 
-export async function abreedtcategoria(req, res){
-    const categoria= await Categoria.findById(req.params.id)
-   res.render('admin/categoria/edt.ejs',{Categoria: categoria});
+export async function abreedtproduto(req, res){
+    const produto= await Produto.findById(req.params.id)
+   res.render('admin/produto/edt.ejs',{Produto: produto});
 }
-export async function edtcategoria(req, res){
-    await Categoria.findByIdAndUpdate(req.params.id,req.body)
-   res.redirect('/admin/categoria/lst')
+export async function edtproduto(req, res){
+    await Produto.findByIdAndUpdate(req.params.id,req.body)
+   res.redirect('/admin/produto/lst')
 }

@@ -2,7 +2,24 @@ import express from 'express';
 
 const router = express.Router();
 
-import {listarusuarios, detalhe,abreaddcategoria,addcategoria, listarcategoria,filtrarcategoria, deletecategoria,edtcategoria,abreedtcategoria} from '../controllers/admin.js';
+import {listarusuarios,
+     detalhe,
+     abreaddcategoria,
+     addcategoria, 
+     listarcategoria,
+    filtrarcategoria, 
+    deletecategoria,
+    edtcategoria,
+    abreedtcategoria,
+    abreaddproduto,
+    addproduto,
+    listarproduto,
+    filtrarproduto,
+    deleteproduto,
+    edtproduto,
+    abreedtproduto,
+} from '../controllers/admin.js';
+
 
 router.get("/admin/usuarios/lst", listarusuarios);
 

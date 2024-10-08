@@ -3,7 +3,7 @@ import conecxao from '../config/conecxao.js'
 const Produto= conecxao.Schema({
     nome:'String',
     categoria:'String',
-     valor:'Double',
+     valor:'number',
      foto:'String',
      descricao:'String',
   

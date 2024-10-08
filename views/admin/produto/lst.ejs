@@ -3,14 +3,13 @@
 
     <div class="card my-4">
       <h5 class="card-header">
-        Lista de Categorias
+        Lista de Produto
       </h5>
       <div class="card-body">
 
         <form method="post" class="form-inline">
           <div class="form-group mb-2">
-            <label for="pesquisar" class="sr-only
-            ">Pesquisar</label>
+            <label for="pesquisar" class="sr-only">Pesquisar</label>
             <input type="text" name="pesquisar" id="pesquisar" placeholder="pesquisar" class="from-control">
           </div>
           <input type="submit" value="pesquisar">
@@ -21,25 +20,33 @@
             <tr>
               <th scope="col">ID</th>
               <th scope="col">Nome</th>
+              <th scope="col">Valor</th>
+              <th scope="col">Foto</th>
               <th scope="col">Editar</th>
               <th scope="col">Deletar</th>
 
             </tr>
           </thead>
           <tbody>
-            <%Categorias.forEach(function(categoria){%>
+            <%Produtos.forEach(function(produto){%>
               <tr>
                 <th scope="row">
-                  <%=categoria._id%>
+                  <%=produto._id%>
                 </th>
                 <td>
-                  <%=categoria.nome%>
+                  <%=produto.nome%>
                 </td>
                 <td>
-                  <a href="/admin/categoria/edt/<%=categoria._id%>">Editar</a>
+                  <%=produto.valor%>
                 </td>
                 <td>
-                <a href="/admin/categoria/del/<%=categoria._id%>">Deletar</a>
+                  <%=produto.foto%>
+                </td>
+                <td>
+                  <a href="/admin/produto/edt/<%=produto._id%>">Editar</a>
+                </td>
+                <td>
+                <a href="/admin/produto/del/<%=produto._id%>">Deletar</a>
                 </td>
               </tr>
 
