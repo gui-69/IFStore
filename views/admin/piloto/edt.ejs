@@ -3,7 +3,7 @@
 
         <div class="card my-4">
 
-            <div class="card-header">Lista Categoria </div>
+            <div class="card-header">editar piloto </div>
 
             <div class="card-body">
 
@@ -13,7 +13,7 @@
 
                         <label for="id" class="forme-label">ID</label>
                         <input type="text" name="id" readonly id="nome" class="form-control"
-                            value="<%=Categoria._id%>">
+                            value="<%=Piloto._id%>">
 
                     </div>
 
@@ -21,10 +21,22 @@
 
                         <label for="nome" class="forme-label">Nome</label>
                         <input type="text" name="nome" required id="nome" class="form-control"
-                            value="<%=Categoria.nome%>">
+                            value="<%=Piloto.nome%>">
 
                     </div>
+                    
+                </div>
+                <div class="mb-3">
+                  <label for="cpf" class="forme-label">CPF</label>
+                    <input type="text" maxlenght="11" name="cpf" required id="cpf" class="form-control"
+                    value="<%=Piloto.cpf%>">
+              </div>
 
+              <div class="mb-3">
+                <label for="certificado" class="forme-label">Certificado</label>
+                  <input type="string" name="certificado" required id="certificado" class="form-control"
+                  value="<%=Piloto.certificado%>">
+            </div>
                     <div class="mb-3">
 
                         <input type="submit" value="dicionar" class="form-control">

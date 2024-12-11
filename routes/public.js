@@ -1,15 +1,22 @@
 import express from 'express';
 const router = express.Router();
+import multer from 'multer';
 
-import {abreCadastro, cadastro, abreLogin, Login } from '../controllers/public.js';
+const upload=multer({dest: 'public/usuarios/'});
+
+import {abreCadastro, cadastro, abreLogin, Login, abreindex} from '../controllers/public.js';
 
 
-router.get('/cadastro',);
+router.get('/cadastro',abreCadastro);
 
-router.post('/cadastro', );
+router.post('/cadastro', upload.single('foto'), cadastro);
 
-router.get('/login',);
 
-router.post('/login',);
+router.get('/login',abreLogin);
+
+router.post('/login',Login);
+
+
+router.get('/', abreindex)
 
 export default router;

@@ -1,0 +1,17 @@
+<%-include('../cabecalho.ejs')%>
+<h1>Editar Cliente: <%= Cliente.nome %></h1>
+<!-- Exemplo de como exibir o nome do cliente -->
+<form action="/admin/cliente/edt/<%= Cliente._id %>" method="post">
+    <label for="nome">Nome:</label>
+    <input type="text" name="nome" id="nome" value="<%= Cliente.nome %>">
+    
+    <label for="email">Email:</label>
+    <input type="email" name="email" id="email" value="<%= Cliente.email %>">
+    
+    <label for="cpf">CPF:</label>
+    <input type="text" name="cpf" id="cpf" value="<%= Cliente.cpf %>">
+    
+    <button type="submit">Atualizar Cliente</button>
+</form>
+
+    <%-include('../rodape.ejs')%>
