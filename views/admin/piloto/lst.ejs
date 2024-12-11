@@ -5,14 +5,8 @@
           Listar Pilotos
       </div>
       <div class="card-body" style="background-color: #f9f9f9; padding: 30px; border-bottom-left-radius: 12px; border-bottom-right-radius: 12px;">
-          <!-- Formulário de Pesquisa -->
-          <form method="post" class="form-inline mb-4">
-              <div class="form-group mb-2">
-                  <label for="pesquisar" class="sr-only">Pesquisar</label>
-                  <input type="text" name="pesquisar" id="pesquisar" placeholder="Pesquisar" class="form-control" style="border-radius: 8px;">
-              </div>
-              <button type="submit" class="btn btn-success ml-2" style="border-radius: 8px;">Pesquisar</button>
-          </form>
+      
+          
 
           <!-- Tabela de Pilotos -->
           <table class="table table-striped table-bordered" style="border-radius: 8px; overflow: hidden;">
@@ -27,21 +21,22 @@
                   </tr>
               </thead>
               <tbody>
-                  <% pilotos.forEach(function(piloto) { %>
-                      <tr>
-                          <td style="color: #333333;"><%= piloto._id %></td>
-                          <td style="color: #333333;"><%= piloto.nome %></td>
-                          <td style="color: #333333;"><%= piloto.cpf %></td>
-                          <td style="color: #333333;"><%= piloto.certificado %></td>
-                          <td>
-                              <a href="/admin/piloto/edt/<%= piloto._id %>" class="btn btn-info btn-sm" style="border-radius: 8px;">Editar</a>
-                          </td>
-                          <td>
-                              <a href="/admin/piloto/del/<%= piloto._id %>" class="btn btn-danger btn-sm" style="border-radius: 8px;">Deletar</a>
-                          </td>
-                      </tr>
-                  <% }) %>
-              </tbody>
+                <% Piloto.forEach(function(piloto) { %>
+                    <tr>
+                        <td style="color: #333333;"><%= piloto._id %></td>
+                        <td style="color: #333333;"><%= piloto.nome %></td>
+                        <td style="color: #333333;"><%= piloto.cpf %></td>
+                        <td style="color: #333333;"><%= piloto.certificado %></td>
+                        <td>
+                            <a href="/admin/piloto/edt/<%= piloto._id %>" class="btn btn-info btn-sm" style="border-radius: 8px;">Editar</a>
+                        </td>
+                        <td>
+                            <a href="/admin/piloto/del/<%= piloto._id %>" class="btn btn-danger btn-sm" style="border-radius: 8px;">Deletar</a>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+            
           </table>
       </div>
   </div>

@@ -92,10 +92,10 @@
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <!-- Itens de navegação -->
             <li class="nav-item active">
-                <a class="nav-link" href="/admin/cliente/lst">Listar clientes</a>
+                <a class="nav-link" href="/admin/clientes/lst">Listar clientes</a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="/admin/cliente/add">Adicionar clientes</a>
+                <a class="nav-link" href="/admin/clientes/add">Adicionar clientes</a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link" href="/admin/contrato/lst">Listar contrato</a>
@@ -116,8 +116,9 @@
                 <a class="nav-link" href="/admin/produto/add">Adicionar produto</a>
             </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+        <form class="form-inline my-2 my-lg-0" action='/admin/pesquisar' method='post'>
+            <input class="form-control mr-sm-2" name="pesquisar" type="search" placeholder="Pesquisar"
+                aria-label="Pesquisar">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
         </form>
     </div>

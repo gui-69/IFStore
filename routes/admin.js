@@ -39,28 +39,30 @@ import {
     edtcontrato,
     addcontrato,
     abreedtcontrato,
+
+    pesquisar
    
 
 } from '../controllers/admin.js';
 
 // cliente --------------------------------------------------------------
-router.get("/admin/cliente/lst", listarcliente);
+router.get("/admin/clientes/lst", listarcliente);
 
 
 //create do modelo catgoriaroute
-router.get("/admin/cliente/add",abreaddcliente);
-router.post("/admin/cliente/add",addcliente); 
+router.get("/admin/clientes/add",abreaddcliente);
+router.post("/admin/clientes/add",addcliente); 
 
 //rotas do modelo cliente(read)
-router.get("/admin/cliente/lst",listarcliente);
-router.post("/admin/cliente/lst",filtrarcliente); 
+router.get("/admin/clientes/lst",listarcliente);
+router.post("/admin/clientes/lst",filtrarcliente); 
 
 //deletar
-router.get('/admin/cliente/del/:id',deletecliente);
+router.get('/admin/clientes/del/:id',deletecliente);
 
 //ditar
-router.get('/admin/cliente/edt/:id',abreedtcliente);
-router.post('/admin/cliente/edt/:id',edtcliente);
+router.get('/admin/clientes/edt/:id',abreedtcliente);
+router.post('/admin/clientes/edt/:id',edtcliente);
 
 //------------------------------------------------
 
@@ -68,7 +70,7 @@ router.post('/admin/cliente/edt/:id',edtcliente);
 
 //create do modelo produtoroute
 router.get("/admin/produto/add",abreaddproduto);
-router.post("/admin/produto/add", upload.array('foto',5),addproduto); 
+router.post("/admin/produto/add", upload.array('foto',5), addproduto); 
 
 //rotas do modelo categoria(read)
 router.get("/admin/produto/lst",listarproduto);
@@ -122,5 +124,6 @@ router.post('/admin/contrato/edt/:id',edtcontrato);
 
 //contrato------------------------------------------------
 
+router.post('/admin/pesquisar/',pesquisar);
 
 export default router   
